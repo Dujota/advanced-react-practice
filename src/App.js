@@ -1,23 +1,39 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Toggle from './ToggleRPC';
+
+
+// import Portal from './Portal'
+
+// With usePortal hook inside it
+import Portal from './PortalWithHooks'
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="App-title">Welcome to React</h1>
       </header>
+      <Toggle>
+        {({ on, toggle }) => (
+          <>
+            {on && <h1>Show Me</h1>}
+            <button onClick={toggle}>Show / Hide</button>
+            {on && <Portal>
+                      <h1>I am in a portal!!!</h1>
+                    </Portal>
+            }
+          </>
+        )}
+      </Toggle>
+
+      {/* DOESNT MATTER WHERE YOU PUT IT, IT WILL STILL TRIGGER THE MOUNTING */}
+      {/* <Portal>
+        <h1>I am in a portal!!!</h1>
+      </Portal> */}
     </div>
   );
 }
