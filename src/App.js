@@ -24,7 +24,8 @@ function App() {
       <Toggle>
         {({ on, toggle }) => (
           <>
-            <Modal>
+            <button onClick={toggle}>Open</button>
+            <Modal on={on} toggle={toggle}>
               <h1>Hi there !!!!!</h1>
             </Modal>
           </>

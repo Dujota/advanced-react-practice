@@ -3,13 +3,16 @@ import Portal from './PortalWithHooks';
 import styles from './Modal.module.css'
 
 
-export default function Modal({children}) {
+export default function Modal({children, on, toggle}) {
 
   return (
     <Portal>
-      <div className={styles["modal-wrapper"]}>
-        {children}
-      </div>
+      {on && <div className={styles["modal-wrapper"]}>
+        <button onClick={toggle}>Close</button>
+        <div>
+          {children}
+        </div>
+      </div>}
     </Portal>
   )
 }
