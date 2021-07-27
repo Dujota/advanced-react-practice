@@ -4,11 +4,6 @@ import './App.css';
 import Toggle from './ToggleRPC';
 import Modal from './Modal'
 
-// import Portal from './Portal'
-
-// With usePortal hook inside it
-import Portal from './PortalWithHooks'
-
 
 function App() {
   return (
