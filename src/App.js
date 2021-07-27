@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Toggle from './ToggleRPC';
-
+import Modal from './Modal'
 
 // import Portal from './Portal'
 
@@ -17,15 +17,16 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">Welcome to React</h1>
       </header>
+
+      <Modal/>
+
+      {/* Simple Toggle Example */}
       <Toggle>
         {({ on, toggle }) => (
           <>
-            {on && <h1>Show Me</h1>}
-            <button onClick={toggle}>Show / Hide</button>
-            {on && <Portal>
-                      <h1>I am in a portal!!!</h1>
-                    </Portal>
-            }
+            <Modal>
+              <h1>Hi there !!!!!</h1>
+            </Modal>
           </>
         )}
       </Toggle>
